@@ -1,4 +1,4 @@
-# 📌 A4 Gestão -- Sistema de Gerenciamento de Tarefas
+# 📌 A4 Solution - Sistema de Gerenciamento de Tarefas
 
 Sistema web para organização de fluxo de trabalho \| CRUD completo \|
 PHP + MySQL
