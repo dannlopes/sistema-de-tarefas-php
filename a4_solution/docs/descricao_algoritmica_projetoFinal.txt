@@ -1,0 +1,53 @@
+Algoritmo "Sistema_Gestao_Tarefas_Cadastro"
+// Disciplina: Técnicas de Desenvolvimento de Algoritmos
+// Descrição: Lógica para cadastro de nova tarefa com validação
+// Autor: Daniel
+
+Var
+titulo, descricao, status : caractere
+prazo : data
+id_usuario, id_responsavel, id_categoria : inteiro
+sucesso_gravacao : logico
+
+Inicio
+// Entrada de Dados
+Escreva("Informe o título da tarefa: ")
+Leia(titulo)
+
+Escreva("Informe a descrição detalhada: ")
+Leia(descricao)
+
+Escreva("Informe o prazo limite: ")
+Leia(prazo)
+
+// Em um sistema real, estes IDs viriam de uma seleção (combobox)
+Escreva("Informe o código do usuário solicitante: ")
+Leia(id_usuario)
+
+Escreva("Informe o código do responsável técnico: ")
+Leia(id_responsavel)
+
+Escreva("Informe o código da categoria do projeto: ")
+Leia(id_categoria)
+
+// Processamento e Validação
+Se (titulo = "") ou (id_usuario = 0) entao
+Escreval("Erro: Dados obrigatórios não preenchidos.")
+Senao
+status <- "Pendente"
+
+  // Simulação da inserção no Banco de Dados
+  // A função InserirNoBanco retornaria VERDADEIRO se o SQL funcionasse
+  sucesso_gravacao <- Verdadeiro 
+  
+  Se (sucesso_gravacao = Verdadeiro) entao
+     Escreval("Sucesso: Tarefa registrada no banco de dados.")
+     Escreval("Status definido automaticamente para: ", status)
+  Senao
+     Escreval("Falha: Erro de conexão ou restrição de chave estrangeira.")
+  FimSe
+
+
+FimSe
+
+Fimalgoritmo

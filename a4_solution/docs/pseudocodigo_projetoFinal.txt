@@ -1,0 +1,44 @@
+ALGORITMO Cadastrar_Tarefa
+INICIO
+
+// 1. Recebimento de Dados
+ESCREVA "Digite o Título da Tarefa"
+LEIA titulo
+ESCREVA "Digite a Descrição"
+LEIA descricao
+ESCREVA "Selecione o Prazo"
+LEIA prazo
+ESCREVA "Selecione o ID do Usuário (Quem pediu)"
+LEIA id_usuario
+ESCREVA "Selecione o ID do Responsável (Quem fará)"
+LEIA id_responsavel
+ESCREVA "Selecione o ID da Categoria"
+LEIA id_categoria
+
+// 2. Validação Básica
+SE (titulo ESTIVER VAZIO) OU (prazo ESTIVER VAZIO) ENTÃO
+    ESCREVA "Erro: Título e Prazo são obrigatórios!"
+    RETORNE PARA O FORMULÁRIO
+SENÃO
+    // 3. Definição de Status Inicial
+    DEFINIR status_inicial COMO "Pendente"
+
+    // 4. Conexão e Gravação
+    CONECTAR ao Banco de Dados "sis_tarefas"
+    
+    EXECUTAR COMANDO SQL:
+        "INSERIR NA TABELA tarefa (titulo, descricao, prazo, status, id_usuario, id_responsavel, id_categoria)
+         VALORES (titulo, descricao, prazo, status_inicial, id_usuario, id_responsavel, id_categoria)"
+
+    // 5. Verificação do Resultado
+    SE (Gravação for SUCESSO) ENTÃO
+        ESCREVA "Alerta: Tarefa cadastrada com sucesso!"
+        REDIRECIONAR para "Lista de Tarefas"
+    SENÃO
+        ESCREVA "Alerta: Erro ao cadastrar tarefa."
+        MANTER na tela de cadastro
+    FIM_SE
+FIM_SE
+
+
+FIM_ALGORITMO

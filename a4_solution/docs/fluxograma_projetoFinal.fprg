@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="Cadastro de Tarefa - A4 Gestão"/>
+        <attribute name="authors" value="Daniel"/>
+        <attribute name="about" value="Lógica de cadastro do sistema de tarefas com simulação de banco de dados"/>
+        <attribute name="saved" value="2024-11-27 10:00:00 "/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="titulo" type="String" array="False" size=""/>
+            <declare name="descricao" type="String" array="False" size=""/>
+            <declare name="prazo" type="String" array="False" size=""/>
+            <declare name="status" type="String" array="False" size=""/>
+            <declare name="bancoDadosOnline" type="Boolean" array="False" size=""/>
+            <output expression="&quot;--- SISTEMA A4 GEST&#195;O ---&quot;" newline="True"/>
+            <output expression="&quot;Digite o T&#237;tulo da Tarefa:&quot;" newline="True"/>
+            <input variable="titulo"/>
+            <output expression="&quot;Digite a Descri&#231;&#227;o:&quot;" newline="True"/>
+            <input variable="descricao"/>
+            <output expression="&quot;Digite o Prazo (Data):&quot;" newline="True"/>
+            <input variable="prazo"/>
+            <comment text="Valida&#231;&#227;o: T&#237;tulo e Prazo s&#227;o obrigat&#243;rios no PHP"/>
+            <if expression="titulo == &quot;&quot; || prazo == &quot;&quot;">
+                <then>
+                    <output expression="&quot;ERRO: T&#237;tulo e Prazo s&#227;o obrigat&#243;rios!&quot;" newline="True"/>
+                    <output expression="&quot;Retornando ao formul&#225;rio...&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="status" expression="&quot;Pendente&quot;"/>
+                    <output expression="&quot;Status definido automaticamente como: &quot; &amp; status" newline="True"/>
+                    <comment text="Simula&#231;&#227;o da conex&#227;o e inser&#231;&#227;o no MySQL"/>
+                    <assign variable="bancoDadosOnline" expression="true"/>
+                    <if expression="bancoDadosOnline">
+                        <then>
+                            <output expression="&quot;Conectando ao Banco 'sis_tarefas'...&quot;" newline="True"/>
+                            <output expression="&quot;Executando: INSERT INTO tarefa...&quot;" newline="True"/>
+                            <output expression="&quot;SUCESSO: Tarefa cadastrada!&quot;" newline="True"/>
+                            <output expression="&quot;Redirecionando para a lista de tarefas...&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;FALHA: Erro ao conectar no Banco de Dados.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
