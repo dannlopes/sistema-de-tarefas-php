@@ -1,4 +1,4 @@
-# 📌 A4 Solution - Sistema de Gerenciamento de Tarefas
+# 📌 A4 Gestão -- Sistema de Gerenciamento de Tarefas
 
 Sistema web para organização de fluxo de trabalho \| CRUD completo \|
 PHP + MySQL
@@ -80,6 +80,24 @@ Coloque o projeto dentro de **htdocs** (XAMPP) e acesse:
 
     http://localhost/a4-gestao-tarefas
 
+------------------------------------------------------------------------
+
+## 📚 Documentação Acadêmica (Entrega A1)
+
+Conforme solicitado nas instruções da avaliação, a documentação
+complementar do projeto encontra-se na pasta **/docs** deste
+repositório.
+
+Os arquivos disponíveis são:
+
+-   **Pseudocódigo:** `pseudocodigo_projetoFinal.txt` --- Lógica estruturada
+    do cadastro de tarefas.\
+-   **Fluxograma:** `fluxograma_projetoFinal.fprg` --- Arquivo fonte para ser aberto
+    no software Flowgorithm.\
+-   **Descrição Algorítmica:** `descricao_algoritmica_projetoFinal.txt` ---
+    Explicação narrativa da lógica de validação e integração com banco
+    de dados.
+
 
 ------------------------------------------------------------------------
 
@@ -94,4 +112,3 @@ Projeto desenvolvido como parte da avaliação acadêmica.
 ## 🌐 Conecte-se comigo
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com)
-
